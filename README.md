@@ -42,7 +42,7 @@ npm install -g windows-build-tools
 Die Angular CLI ist das offizielle Build-Tool für Angular. Mit folgendem Befehl kannst Du die CLI installieren:
 
 ```
-npm install -g @angular/cli@1.4.5
+npm install -g @angular/cli@1.4.9
 ```
 
 Überprüfe bitte anschließend die Versionen, damit wir beim Workshop alle auf dem gleichen Stand sind.
@@ -54,9 +54,12 @@ npm -v
 > Erwartet: 5.x oder höher
 
 ng -v
-> Erwartet: 1.4.5
+> Erwartet: 1.4.9
 
 ```
+
+(Hinweis: Wir haben die Versionsnummer für die Angular CLI explizit angegeben, damit wir zum Workshop alle die gleiche Umgebung haben. Sollte bis zum Workshop eine neue Version erschienen sein, können wir die Angular-CLI vor Ort aktualisieren.)
+
 
 ## Startprojekt erzeugen
 
@@ -98,6 +101,6 @@ Bei Fragen wende dich einfach direkt an das Angular-Schule-Team:
 
 <img src="http://assets.angular.schule/logo-angular-schule.png" height="60">
 
-### &copy; 2017 http://angular.schule, Stand: 06.10.2017
+### &copy; 2017 http://angular.schule, Stand: 21.10.2017
 
 
