@@ -9,7 +9,7 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}/tsc-out/app.js",
+            "program": "${workspaceFolder}/bundle.js",
             "outFiles": [
                 "${workspaceFolder}/**/*.js"
             ]
