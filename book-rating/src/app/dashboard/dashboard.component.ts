@@ -1,3 +1,4 @@
+import { Book } from './../shared/book';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,12 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  books: string[];
+  books: Book[];
 
   constructor() {}
 
   ngOnInit() {
-    this.books = ['Angular', 'AngularJS 1.x'];
+    this.books = [
+      new Book('000', 'Angular', 'Zurück in die Zukunft', 5),
+      new Book('111', 'AngularJS 1.x', 'Oldie but goldie', 3)
+    ];
 
     /* setTimeout(() => {
       this.books = ['React'];
