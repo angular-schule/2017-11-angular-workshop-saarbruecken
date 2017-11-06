@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "es2015",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "experimentalDecorators": true,
+        "noEmitOnError": true,
+        "declaration": true,
+        "outDir": "./tsc-out"
+    },
+    "exclude": [
+        "node_modules",
+        "tsc-out"
+    ]
+}
