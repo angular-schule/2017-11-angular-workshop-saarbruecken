@@ -32,19 +32,21 @@ export class Customer {
 
     doSomething() {
         var self = this;
-        function callback() {
-            let num = self.calculateNumber(4);
-            console.log('Number:', num);
+        let callback = function() {
+            self.calculateNumber(4);
+            // this zeigt hier auf function(){}
+            // self zeigt auf Instanz von Customer
         }
 
         let callback1 = () => {
-            let num = this.calculateNumber(4);
-            console.log('Number1:', num);
+            this.calculateNumber(4);
+            // this zeigt auf Instanz von Customer
         }
 
-        // setTimeout(function() { this.calculateNumber(4) }, 1000);
+        // setTimeout(function() { /* ... */ }, 1000);
 
         callback1();
+        
 
         let text = `Herzlich Willkommen
 in Saarbrücken!
