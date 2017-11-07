@@ -5,10 +5,14 @@ export class Book {
               public rating: number = 1) {}
 
   rateUp() {
-    this.rating++;
+    if (this.rating < 5) {
+      this.rating++;
+    }
   }
 
   rateDown() {
-    this.rating--;
+    if (this.rating > 1) {
+      this.rating--;
+    }
   }
 }
