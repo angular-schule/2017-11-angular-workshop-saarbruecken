@@ -26,19 +26,10 @@ export class DashboardComponent implements OnInit {
     this.books.sort((a, b) => b.rating - a.rating);
   }
 
-  addBook(isbn: HTMLInputElement, title: HTMLInputElement, description: HTMLInputElement) {
-    const newBook = new Book(
-      isbn.value,
-      title.value,
-      description.value
-    );
-
-    this.books.push(newBook);
+  addBook(book: Book) {
+    this.books.push(book);
     this.reorderBooks();
 
-    isbn.value = '';
-    title.value = '';
-    description.value = '';
   }
 
 }

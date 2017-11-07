@@ -1,23 +1,4 @@
-<form>
-  <div class="form-group">
-    <label for="isbn">ISBN</label>
-    <input class="form-control" name="isbn" #isbn><br>
-  </div>
-
-  <div class="form-group">
-    <label for="isbn">Title</label>
-    <input class="form-control" name="title" #title><br>
-  </div>
-
-  <div class="form-group">
-    <label for="isbn">Description</label>
-    <input class="form-control" name="description" #description><br>
-  </div>
-
-  <div class="form-group">
-    <button class="btn btn-danger" type="button" (click)="addBook(isbn, title, description)">Speichern</button>
-  </div>
-</form>
+<br-create-book (bookCreated)="addBook($event)"></br-create-book>
 
 <br-book
   *ngFor="let b of books"
