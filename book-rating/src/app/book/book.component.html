@@ -5,13 +5,13 @@
     </div>
     <div class="card-title">
       <h2>
-        {{ book.title }}
-        <span class="badge badge-secondary">{{ book.rating }}</span>
+        <span class="book-title">{{ book.title }}</span>
+        <span class="badge badge-secondary rating-badge">{{ book.rating }}</span>
       </h2>
     </div>
     <p>{{ book.description }}</p>
 
-    <button class="btn btn-secondary fa fa-thumbs-up" (click)="rateUp()"></button>
+    <button class="btn btn-secondary fa fa-thumbs-up rate-up-btn" (click)="rateUp()"></button>
     <button class="btn btn-secondary fa fa-thumbs-down" (click)="rateDown()"></button>
   </div>
 </div>
