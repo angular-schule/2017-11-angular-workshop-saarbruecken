@@ -5,6 +5,12 @@
 
 <strong>Anzahl Bücher:</strong> {{ books.length }}
 
+<div>
+  <strong>Bücher als JSON</strong>
+  <pre>
+  {{ books | json }}
+  </pre>
+</div>
 
 <!--
 <div *ngFor="let b of books; index as i">
