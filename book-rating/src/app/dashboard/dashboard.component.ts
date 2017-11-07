@@ -22,4 +22,9 @@ export class DashboardComponent implements OnInit {
     }, 2000); */
   }
 
+  reorderBooks(book: Book) {
+    const foo: any = {};
+    this.books.sort((a, b) => b.rating - a.rating);
+  }
+
 }
