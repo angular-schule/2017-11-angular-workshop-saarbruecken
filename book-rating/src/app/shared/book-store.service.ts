@@ -8,6 +8,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BookStoreService {
 
+  api = 'http://api.angular.schule';
+
   constructor(private http: HttpClient) { }
 
   getAllStatic(): Book[] {
@@ -19,7 +21,7 @@ export class BookStoreService {
   }
 
   getAll(): Observable<Book[]> {
-    return this.http.get<BookResponse[]>('http://api.angular.schule/books').pipe(
+    return this.http.get<BookResponse[]>(`${this.api}/books`).pipe(
       retry(3),
       map(rawBooks => this.convertRawToBooks(rawBooks))
     );
