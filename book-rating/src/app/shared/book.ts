@@ -5,6 +5,16 @@ export class Book {
     return new Book('', '', '');
   }
 
+  // factory method
+  static fromObj(obj: any): Book {
+    return new Book(
+      obj.isbn,
+      obj.title,
+      obj.description,
+      obj.rating
+    );
+  }
+
   constructor(public isbn: string,
               public title: string,
               public description: string,

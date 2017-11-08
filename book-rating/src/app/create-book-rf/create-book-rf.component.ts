@@ -41,11 +41,7 @@ export class CreateBookRfComponent implements OnInit {
   }
 
   addBook() {
-    const newBook = new Book(
-      this.form.value.isbn,
-      this.form.value.title,
-      this.form.value.description
-    );
+    const newBook = Book.fromObj(this.form.value);
     this.bookCreated.emit(newBook);
     this.form.reset();
   }
