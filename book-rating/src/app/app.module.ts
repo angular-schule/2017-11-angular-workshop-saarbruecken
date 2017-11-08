@@ -1,3 +1,4 @@
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -8,17 +9,20 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { BookComponent } from './book/book.component';
 import { CreateBookComponent } from './create-book/create-book.component';
+import { CreateBookTdfComponent } from './create-book-tdf/create-book-tdf.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     BookComponent,
-    CreateBookComponent
+    CreateBookComponent,
+    CreateBookTdfComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'de' }
