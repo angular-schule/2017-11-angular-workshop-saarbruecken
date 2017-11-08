@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BookStoreService } from './shared/book-store.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,6 +30,7 @@ import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.compo
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'de' },

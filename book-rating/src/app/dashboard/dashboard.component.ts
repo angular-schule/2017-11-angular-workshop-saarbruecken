@@ -8,16 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
-  books: Book[];
+  books: Book[] = [];
 
   constructor(private bs: BookStoreService) {}
 
   ngOnInit() {
-    this.books = this.bs.getAllStatic();
-
-    /* setTimeout(() => {
-      this.books = ['React'];
-    }, 2000); */
+    this.bs.getAll()
+      .subscribe(books => {
+        this.books = books;
+        this.reorderBooks();
+      });
   }
 
   reorderBooks() {
