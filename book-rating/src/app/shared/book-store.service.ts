@@ -1,3 +1,4 @@
+import { BookResponse } from './book-response';
 import { map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
@@ -18,13 +19,13 @@ export class BookStoreService {
   }
 
   getAll(): Observable<Book[]> {
-    return this.http.get<any[]>('http://api.angular.schule/books').pipe(
+    return this.http.get<BookResponse[]>('http://api.angular.schule/books').pipe(
       retry(3),
       map(rawBooks => this.convertRawToBooks(rawBooks))
     );
   }
 
-  private convertRawToBooks(rawBooks: any[]) {
+  private convertRawToBooks(rawBooks: BookResponse[]) {
     // Achtung: Array.map()
     return rawBooks.map(b => Book.fromObj(b));
   }
