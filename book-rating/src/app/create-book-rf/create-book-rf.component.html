@@ -1,0 +1,30 @@
+<form (submit)="addBook()" [formGroup]="form">
+  <div class="form-group">
+    <label for="isbn">ISBN</label>
+    <input class="form-control" name="isbn" formControlName="isbn">
+
+    <div class="alert alert-danger" *ngIf="form.get('isbn').invalid && form.get('isbn').dirty">
+      ISBN muss angegeben werden und zwischen 10 und 13 Zeichen haben.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="title">Title</label>
+    <input class="form-control" name="title" formControlName="title">
+
+    <div class="alert alert-danger" *ngIf="form.get('title').invalid && form.get('title').dirty">
+      Titel muss angegeben werden.
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="description">Description</label>
+    <input class="form-control" name="description" formControlName="description">
+  </div>
+
+  <div class="form-group">
+    <button class="btn btn-danger" type="submit" [disabled]="form.invalid">Speichern</button>
+  </div>
+
+  <pre>{{ form.value | json }}</pre>
+</form>
