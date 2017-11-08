@@ -1,3 +1,4 @@
+import { BookStoreService } from '../shared/book-store.service';
 import { Book } from './../shared/book';
 import { Component, OnInit } from '@angular/core';
 
@@ -9,13 +10,10 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   books: Book[];
 
-  constructor() {}
+  constructor(private bs: BookStoreService) {}
 
   ngOnInit() {
-    this.books = [
-      new Book('000', 'Angular', 'Zurück in die Zukunft', 5),
-      new Book('111', 'AngularJS 1.x', 'Oldie but goldie', 3)
-    ];
+    this.books = this.bs.getAllStatic();
 
     /* setTimeout(() => {
       this.books = ['React'];
