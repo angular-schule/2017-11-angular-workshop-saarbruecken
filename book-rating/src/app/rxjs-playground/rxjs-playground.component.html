@@ -1,0 +1,22 @@
+<h3>RxJS Playground</h3>
+
+<button
+  class="btn btn-primary"
+  (click)="sendRandomValue()">
+  Send random value</button>
+
+<button
+  class="btn btn-success"
+  (click)="sendValue(42)">
+  Send 42</button>
+
+<button
+  class="btn btn-danger"
+  (click)="completeSubject()">
+  Complete subject</button>
+
+<br>
+<br>
+
+{{ results | json }}<br>
+{{ resultsPiped | json }}
