@@ -50,4 +50,19 @@ export class CreateBookRfComponent implements OnInit {
     this.form.reset();
   }
 
+  setExampleBook() {
+    this.form.setValue({
+      isbn: '1234567890',
+      title: 'Testbuch',
+      description: 'Ein sehr gutes Buch'
+    });
+    this.form.updateValueAndValidity();
+  }
+
+  setIsbnExample() {
+    this.form.patchValue({
+      isbn: '0987654321'
+    });
+  }
+
 }

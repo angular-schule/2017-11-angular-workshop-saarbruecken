@@ -24,7 +24,12 @@
 
   <div class="form-group">
     <button class="btn btn-danger" type="submit" [disabled]="form.invalid">Speichern</button>
+    <button class="btn btn-secondary" type="button" (click)="setExampleBook()">Set example book</button>
+    <button class="btn btn-secondary" type="button" (click)="setIsbnExample()">Set example ISBN</button>
   </div>
 
   <pre>{{ form.value | json }}</pre>
+
+
+
 </form>
