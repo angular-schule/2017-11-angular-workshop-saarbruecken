@@ -1,5 +1,5 @@
 import { Book } from './../shared/book';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit, ViewChild, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -13,9 +13,11 @@ export class CreateBookRfComponent implements OnInit {
 
   @Output() bookCreated = new EventEmitter<Book>();
 
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
+    /*
+    // ohne FormBuilder
     this.form = new FormGroup({
       isbn: new FormControl('', [
         Validators.required,
@@ -24,6 +26,17 @@ export class CreateBookRfComponent implements OnInit {
       ]),
       title: new FormControl('', Validators.required),
       description: new FormControl('')
+    });*/
+
+    // mit FormBuilder
+    this.form = this.fb.group({
+      isbn: ['', [
+        Validators.required,
+        Validators.minLength(10),
+        Validators.maxLength(13)
+      ]],
+      title: ['', Validators.required],
+      description: ['']
     });
   }
 
