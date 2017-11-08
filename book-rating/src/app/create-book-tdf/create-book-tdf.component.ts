@@ -1,5 +1,6 @@
 import { Book } from './../shared/book';
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'br-create-book-tdf',
@@ -7,6 +8,8 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./create-book-tdf.component.scss']
 })
 export class CreateBookTdfComponent implements OnInit {
+  @ViewChild(NgForm) form: NgForm;
+  // @ViewChild('form') form: NgForm;
 
   book = Book.empty();
 
@@ -20,6 +23,7 @@ export class CreateBookTdfComponent implements OnInit {
   addBook() {
     this.bookCreated.emit(this.book);
     this.book = Book.empty();
+    this.form.resetForm();
   }
 
 }
