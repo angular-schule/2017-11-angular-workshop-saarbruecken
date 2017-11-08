@@ -1,6 +1,7 @@
 import { BookStoreService } from '../shared/book-store.service';
 import { Book } from './../shared/book';
 import { Component, OnInit } from '@angular/core';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'br-dashboard',
@@ -25,9 +26,13 @@ export class DashboardComponent implements OnInit {
   }
 
   addBook(book: Book) {
-    this.books.push(book);
-    this.reorderBooks();
-
+    this.bs.create(book).pipe(
+      switchMap(() => this.bs.getAll())
+    )
+    .subscribe(books => {
+      this.books = books;
+      this.reorderBooks();
+    });
   }
 
 }

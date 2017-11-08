@@ -27,6 +27,17 @@ export class BookStoreService {
     );
   }
 
+  getSingle(isbn: string): Observable<Book> {
+    return this.http.get<BookResponse>(`${this.api}/book/${isbn}`).pipe(
+      retry(3),
+      map(b => Book.fromObj(b))
+    );
+  }
+
+  create(book: Book): Observable<any> {
+    return this.http.post(`${this.api}/book`, book, { responseType: 'text' });
+  }
+
   private convertRawToBooks(rawBooks: BookResponse[]) {
     // Achtung: Array.map()
     return rawBooks.map(b => Book.fromObj(b));
