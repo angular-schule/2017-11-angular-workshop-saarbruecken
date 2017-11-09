@@ -14,6 +14,7 @@ import { CreateBookComponent } from './create-book/create-book.component';
 import { CreateBookTdfComponent } from './create-book-tdf/create-book-tdf.component';
 import { CreateBookRfComponent } from './create-book-rf/create-book-rf.component';
 import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.component';
+import { BookDetailsComponent } from './book-details/book-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.compo
     CreateBookComponent,
     CreateBookTdfComponent,
     CreateBookRfComponent,
-    RxjsPlaygroundComponent
+    RxjsPlaygroundComponent,
+    BookDetailsComponent
   ],
   imports: [
     BrowserModule,
