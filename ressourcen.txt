@@ -4,4 +4,5 @@ http://reactivex.io/rxjs/class/es6/Observable.js
 https://blog.thoughtram.io/rxjs/2017/08/24/taming-snakes-with-reactive-streams.html
 https://rxviz.com
 https://hackernoon.com/using-observables-to-make-our-app-work-with-barcode-scanners-e8a673fba625
-
+https://leanpub.com/router
+https://fluin.io/blog/angular-best-practices-august-2017
