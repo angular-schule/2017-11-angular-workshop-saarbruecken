@@ -1,3 +1,4 @@
+import { AuthService } from './shared/auth.service';
 import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -17,7 +18,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: 'de' }
+    { provide: LOCALE_ID, useValue: 'de' },
+    AuthService
   ],
   bootstrap: [AppComponent]
 })

@@ -8,7 +8,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class BookStoreService {
 
-  api = 'http://api.angular.schule';
+  api = 'http://api.angular.schule/secure';
 
   constructor(private http: HttpClient) { }
 
