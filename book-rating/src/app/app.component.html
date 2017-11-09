@@ -3,7 +3,8 @@
   <h1>Willkommen</h1>
   <p>
     <a class="btn btn-primary" routerLink="/book/dashboard">Go to dashboard</a>
-    <a class="btn btn-success" (click)="login()">Login</a>
+    <a class="btn btn-success" (click)="login()" *ngIf="!auth.isAuthenticated">Login</a>
+    <a class="btn btn-danger" (click)="logout()" *ngIf="auth.isAuthenticated">Logout</a>
   </p>
 
 

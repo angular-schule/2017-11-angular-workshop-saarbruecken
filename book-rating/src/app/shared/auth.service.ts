@@ -16,6 +16,20 @@ export class AuthService {
 
   constructor(private route: ActivatedRoute) { }
 
+  get token(): string {
+    return localStorage.getItem('access_token');
+  }
+
+  get isAuthenticated(): boolean {
+    return !!this.token;
+  }
+
+  logout() {
+    localStorage.removeItem('access_token');
+  }
+
+
+
   authorize() {
     const url = `${this.settings.authServer}/authorize?` +
       'response_type=token&' +

@@ -1,3 +1,5 @@
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { TokenInterceptor } from './shared/token.interceptor';
 import { AuthService } from './shared/auth.service';
 import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,18 +9,19 @@ import localeDe from '@angular/common/locales/de';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 @NgModule({
   declarations: [
     AppComponent,
-    RxjsPlaygroundComponent,
+    RxjsPlaygroundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'de' },
+    { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
     AuthService
   ],
   bootstrap: [AppComponent]

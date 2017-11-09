@@ -1,3 +1,4 @@
+import { RepeatDirective } from './shared/repeat.directive';
 import { BookDetailsComponent } from './book-details/book-details.component';
 import { CreateBookRfComponent } from './create-book-rf/create-book-rf.component';
 import { CreateBookTdfComponent } from './create-book-tdf/create-book-tdf.component';
@@ -19,7 +20,6 @@ import { BooksRoutingModule } from './books-routing.module';
     BooksRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
   ],
   declarations: [
     DashboardComponent,
@@ -27,7 +27,8 @@ import { BooksRoutingModule } from './books-routing.module';
     CreateBookComponent,
     CreateBookTdfComponent,
     CreateBookRfComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    RepeatDirective
   ],
   providers: [
     BookStoreService
