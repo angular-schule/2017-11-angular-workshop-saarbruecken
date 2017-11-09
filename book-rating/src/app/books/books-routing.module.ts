@@ -4,8 +4,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: 'book/dashboard', component: DashboardComponent },
-  { path: 'book/details/:isbn', component: BookDetailsComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'details/:isbn', component: BookDetailsComponent },
 ];
 
 @NgModule({

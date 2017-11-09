@@ -1,4 +1,3 @@
-import { BooksModule } from './books/books.module';
 import { RxjsPlaygroundComponent } from './rxjs-playground/rxjs-playground.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -15,8 +14,7 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    BooksModule
+    AppRoutingModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'de' }

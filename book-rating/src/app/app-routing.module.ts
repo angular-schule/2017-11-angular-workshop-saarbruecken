@@ -3,7 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'book/dashboard', pathMatch: 'full' }, // Default-Route
-  // { path: '**', redirectTo: 'book/dashboard' } // Catchall-Route
+  { path: 'book', loadChildren: 'app/books/books.module#BooksModule' },
+  { path: '**', redirectTo: 'book/dashboard' } // Catchall-Route
 ];
 
 @NgModule({
