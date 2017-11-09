@@ -1,5 +1,5 @@
 import { BookResponse } from './book-response';
-import { map, retry } from 'rxjs/operators';
+import { delay, map, retry } from 'rxjs/operators';
 import { Observable } from 'rxjs/Observable';
 import { HttpClient } from '@angular/common/http';
 import { Book } from './book';
@@ -30,7 +30,8 @@ export class BookStoreService {
   getSingle(isbn: string): Observable<Book> {
     return this.http.get<BookResponse>(`${this.api}/book/${isbn}`).pipe(
       retry(3),
-      map(b => Book.fromObj(b))
+      map(b => Book.fromObj(b)),
+      delay(2000) // nur für Debugging
     );
   }
 
