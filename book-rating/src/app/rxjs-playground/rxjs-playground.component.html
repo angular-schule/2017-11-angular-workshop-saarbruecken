@@ -20,3 +20,14 @@
 
 {{ results | json }}<br>
 {{ resultsPiped | json }}
+
+
+<hr>
+
+<button class="btn btn-secondary" (click)="addTimerElement()">Add timer</button>
+
+<div *ngFor="let t of timers">
+  {{ interval$ | async }}
+</div>
+
+

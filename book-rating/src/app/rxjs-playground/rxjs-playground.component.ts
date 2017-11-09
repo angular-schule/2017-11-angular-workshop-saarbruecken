@@ -33,9 +33,14 @@ export class RxjsPlaygroundComponent implements OnInit, OnDestroy {
   subject = new Subject<number>();
   subscription: Subscription;
 
+  interval$: Observable<number> = Observable.interval(1000);
+  timers: any[] = [];
+
   constructor() { }
 
   ngOnInit() {
+
+
     this.subscription = this.subject.subscribe(e => {
       console.log('Subject:', e);
       this.results.push(e);
@@ -79,6 +84,10 @@ export class RxjsPlaygroundComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
+  }
+
+  addTimerElement() {
+    this.timers.push('');
   }
 
 
