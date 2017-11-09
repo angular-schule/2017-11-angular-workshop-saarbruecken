@@ -13,6 +13,6 @@
 
     <button class="btn btn-secondary fa fa-thumbs-up rate-up-btn" (click)="rateUp()"></button>
     <button class="btn btn-secondary fa fa-thumbs-down" (click)="rateDown()"></button>
-    <a [routerLink]="['/book', book.isbn]" class="btn btn-success">Details</a>
+    <a [routerLink]="['/book', 'details', book.isbn]" class="btn btn-success">Details</a>
   </div>
 </div>

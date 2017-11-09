@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'dashboard', pathMatch: 'full' }, // Default-Route
-  { path: '**', redirectTo: 'dashboard' } // Catchall-Route
+  { path: '', redirectTo: 'book/dashboard', pathMatch: 'full' }, // Default-Route
+  // { path: '**', redirectTo: 'book/dashboard' } // Catchall-Route
 ];
 
 @NgModule({
